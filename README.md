@@ -10,7 +10,7 @@
 
 
 ### Project: HOME AUTOMATION WITH BLUETOOTH
-![image alt](https://github.com/pavankum123/codetech-Atask1/blob/9bb58358e1d5c691f3aac5b7ce34d858079d06b4/pushbutton.webp)
+![image alt](https://github.com/pavankum123/codetech-Atask2/blob/2c5d5fb0f3bea026cb4ec19f82c080b40814513f/HOME%20AUTOMATION%20WITH%20BLUETOOTH.jpg)
 
 ### Objective
 The primary objective of a Bluetooth-controlled Home Automation System is to enable remote control and management of various electrical devices within a home using Bluetooth technology. This provides greater convenience, efficiency, and comfort for users by automating routine tasks and allowing them to control home devices with a simple interface on a mobile phone or tablet.
