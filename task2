@@ -1,1 +1,53 @@
+#include <SoftwareSerial.h>
+
+// Bluetooth module connected to pins 0 (RX) and 1 (TX)
+SoftwareSerial btSerial(0, 1); 
+
+// Pin configuration for relays controlling devices
+const int relayPin1 = 8;  // Relay 1 for device 1 (e.g., light)
+const int relayPin2 = 9;  // Relay 2 for device 2 (e.g., fan)
+
+void setup() {
+  // Set relay pins as output
+  pinMode(relayPin1, OUTPUT);
+  pinMode(relayPin2, OUTPUT);
+  
+  // Start serial communication
+  Serial.begin(9600);
+  btSerial.begin(9600);  // Bluetooth communication
+
+  // Initialize relays as OFF
+  digitalWrite(relayPin1, LOW);
+  digitalWrite(relayPin2, LOW);
+}
+
+void loop() {
+  // Read incoming Bluetooth data
+  if (btSerial.available()) {
+    char receivedChar = btSerial.read();  // Read data sent from app
+
+    // Check received data and control the devices
+    if (receivedChar == '1') {
+      // Turn on device 1 (light)
+      digitalWrite(relayPin1, HIGH);
+      Serial.println("Device 1 ON");
+    }
+    if (receivedChar == '0') {
+      // Turn off device 1 (light)
+      digitalWrite(relayPin1, LOW);
+      Serial.println("Device 1 OFF");
+    }
+
+    if (receivedChar == '2') {
+      // Turn on device 2 (fan)
+      digitalWrite(relayPin2, HIGH);
+      Serial.println("Device 2 ON");
+    }
+    if (receivedChar == '3') {
+      // Turn off device 2 (fan)
+      digitalWrite(relayPin2, LOW);
+      Serial.println("Device 2 OFF");
+    }
+  }
+}
 
